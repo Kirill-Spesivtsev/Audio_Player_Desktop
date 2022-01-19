@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="AudioPlayer.Visualizer1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AudioPlayer"
+             mc:Ignorable="d" Width="341.793" Height="228">
+    <UserControl.Resources>
+
+        <Style TargetType="{x:Type ProgressBar}" x:Key="GradientBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}" >
+                        <Grid x:Name="Root">
+                            <Border 
+                                x:Name="PART_Track" 
+                                CornerRadius="2" 
+                                BorderBrush="Green"
+                                BorderThickness="2">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Offset="0" Color="#FF00FF00"/>
+                                        <GradientStop Offset="0.5" Color="#FFFFFF00"/>
+                                        <GradientStop Offset="1" Color="#FFFF0000"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <Border 
+                                CornerRadius="2" 
+                                BorderBrush="Green" 
+                                BorderThickness="2" 
+                                HorizontalAlignment="Left">
+                                <DockPanel>
+                                    <Rectangle x:Name="PART_Indicator"/>
+                                    <Rectangle x:Name="Mask" MinWidth="{TemplateBinding Width}" Fill="White" />
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter TargetName="Root" Property="LayoutTransform">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="270" />
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Root" Property="Width"
+                                    Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
+                                />
+                                <Setter TargetName="Root" Property="Height"
+                                    Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}"
+                                />
+                                <Setter TargetName="Mask" Property="MinWidth"
+                                    Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
+                                />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="228" HorizontalAlignment="Right" VerticalAlignment="Center" Width="337">
+            <ProgressBar x:Name="Bar1" Margin="0,5,5,5" Width="16" Height="200" Value="15" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar2" Margin="0,5,5,5" Width="16" Height="200" Value="31" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar3" Margin="0,5,5,5" Width="16" Height="200" Value="47" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar4" Margin="0,10,5,10" Width="16" Height="200" Value="63" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar5" Margin="0,10,5,10" Width="16" Height="200" Value="79" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar6" Margin="0,10,5,10" Width="16" Height="200" Value="95" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar7" Margin="0,10,5,10" Width="16" Height="200" Value="111" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar8" Margin="0,10,5,10" Width="16" Height="200" Value="127" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar9" Margin="0,10,5,10" Width="16" Height="200" Value="143" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar10" Margin="0,10,5,10" Width="16" Height="200" Value="159" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar11" Margin="0,14,5,14" Width="16" Height="200" Value="175" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar12" Margin="0,14,5,14" Width="16" Height="200" Value="191" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar13" Margin="0,14,5,14" Width="16" Height="200" Value="207" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar14" Margin="0,14,5,14" Width="16" Height="200" Value="223" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar15" Margin="0,14,5,14" Width="16" Height="200" Value="239" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="Bar16" Margin="0,14,5,14" Width="16" Height="200" Value="255" Orientation="Vertical" Style="{StaticResource GradientBar}" Maximum="255" >
+                <ProgressBar.Effect>
+                    <DropShadowEffect ShadowDepth="0"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
